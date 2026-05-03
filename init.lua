@@ -1,0 +1,17 @@
+
+-- Main Neovim entry point.
+-- Loads core editor behavior first, then starts lazy.nvim and plugin modules.
+require("core.options")
+require("core.keymaps")
+
+require("config.lazy")
+require("plugins.treesitter")
+require("plugins.ui")
+require("plugins.lsp")
+require("plugins.tree")
+require("plugins.tabline")
+require("plugins.noice")
+require("plugins.telescope")
+require("plugins.surround")
+require("plugins.flash")
+require("plugins.render_markdown")

@@ -13,6 +13,11 @@ return {
                 "TabLine",       -- 新增
 		        "TabLineFill",   -- 新增 
 		        "TabLineSel",    -- 新增
+                "WhichKey",            -- 新增
+		        "WhichKeyNormal",      -- 新增 —— 弹窗主背景
+		        "WhichKeyBorder",      -- 新增 —— 边框
+		        "WhichKeyFloat",       -- 新增
+		        "WhichKeyValue",
 			},
 		})
 

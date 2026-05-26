@@ -32,6 +32,19 @@ return {
         },
       })
 
+      vim.lsp.config("clangd", {
+        capabilities = capabilities,
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--offset-encoding=utf-8",
+          "--fallback-style={BasedOnStyle: LLVM, UseTab: Always, IndentWidth: 4, TabWidth: 4}",
+        },
+        filetypes = { "c", "cpp" },
+        root_markers = { ".clangd", "compile_commands.json", ".git" },
+      })
+
       vim.lsp.config("ts_ls", {
         capabilities = capabilities,
         filetypes = {
@@ -49,6 +62,7 @@ return {
       vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("gopls")
       vim.lsp.enable("ts_ls")
+      vim.lsp.enable("clangd")
 
       cmp.setup({
         mapping = cmp.mapping.preset.insert({

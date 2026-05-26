@@ -28,6 +28,9 @@ keymap.set({"n", "v"}, "<leader>dd", '"_d', {desc = "delete without yank"})
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
+-- 查看当前行的 LSP diagnostic / error
+keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+
 -- 切换buffer
 keymap.set("n", "<A-L>", ":bnext<CR>")
 keymap.set("n", "<A-H>", ":bprevious<CR>")
@@ -58,5 +61,4 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 -- 切换到行头行尾 --
 vim.keymap.set({ "n", "x", "o" }, "<S-H>", "^", { desc = "Start of line" })
 vim.keymap.set({ "n", "x", "o" }, "<S-L>", "$", { desc = "End of line" })
-
 

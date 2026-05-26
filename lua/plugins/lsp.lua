@@ -32,8 +32,23 @@ return {
         },
       })
 
+      vim.lsp.config("ts_ls", {
+        capabilities = capabilities,
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+        },
+        root_dir = function(bufnr, on_dir)
+          local root = vim.fs.root(bufnr, { "tsconfig.json", "jsconfig.json", "package.json", ".git" })
+          on_dir(root or vim.fn.getcwd())
+        end,
+      })
+
       vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("gopls")
+      vim.lsp.enable("ts_ls")
 
       cmp.setup({
         mapping = cmp.mapping.preset.insert({
